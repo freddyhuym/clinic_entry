@@ -29,6 +29,35 @@
 </head>
 <body>
 
+<!-- 背景：流動弧線 × 醫學氛圍 -->
+<div class="bg" aria-hidden="true">
+  <svg class="bg-flow" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="bgGold" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="rgba(206,154,75,0)"/>
+        <stop offset="0.5" stop-color="rgba(206,154,75,0.30)"/>
+        <stop offset="1" stop-color="rgba(206,154,75,0)"/>
+      </linearGradient>
+      <linearGradient id="bgTeal" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="rgba(114,186,180,0)"/>
+        <stop offset="0.5" stop-color="rgba(114,186,180,0.25)"/>
+        <stop offset="1" stop-color="rgba(114,186,180,0)"/>
+      </linearGradient>
+    </defs>
+    <g class="bg-drift-a">
+      <path d="M-100,220 C300,120 700,320 1100,200 S1540,140 1600,180" fill="none" stroke="url(#bgGold)" stroke-width="1.4"/>
+      <path d="M-100,300 C350,200 750,400 1150,270 S1560,230 1620,260" fill="none" stroke="url(#bgTeal)" stroke-width="1.2"/>
+    </g>
+    <g class="bg-drift-b">
+      <path d="M-100,600 C320,520 720,700 1120,580 S1560,540 1620,570" fill="none" stroke="url(#bgTeal)" stroke-width="1.2"/>
+      <path d="M-100,680 C360,600 760,760 1160,650 S1580,610 1640,640" fill="none" stroke="url(#bgGold)" stroke-width="1"/>
+    </g>
+  </svg>
+  <div class="bg-halo bg-halo-gold"></div>
+  <div class="bg-halo bg-halo-teal"></div>
+  <div class="bg-halo bg-halo-green"></div>
+</div>
+
 <!-- SECTION 01 · 品牌識別 -->
 <header class="intro">
   <div class="intro-mark" aria-hidden="true">
