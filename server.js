@@ -57,9 +57,15 @@ const server = http.createServer((req, res) => {
   }
 
   // 靜態檔案（阻擋路徑穿越）
-  const rel = decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname);
+  let rel;
+  try {
+    rel = decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname);
+  } catch {
+    return send(res, 400, '400 Bad Request', { 'Content-Type': 'text/plain' });
+  }
   const filePath = path.normalize(path.join(PUBLIC_DIR, rel));
-  if (!filePath.startsWith(PUBLIC_DIR)) {
+  const contained = path.relative(PUBLIC_DIR, filePath);
+  if (contained.startsWith('..') || path.isAbsolute(contained)) {
     return send(res, 403, '403 Forbidden', { 'Content-Type': 'text/plain' });
   }
 
