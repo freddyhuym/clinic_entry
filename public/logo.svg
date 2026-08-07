@@ -1,8 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-108 -108 216 216" role="img" aria-label="醫境 MediRealm">
-  <circle cx="0" cy="0" r="104" fill="none" stroke="#C09A6B" stroke-width="3" opacity="0.55"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-108 -108 216 216" role="img" aria-label="醫境醫療 YIJING MEDICAL">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E4BE7C"/>
+      <stop offset="1" stop-color="#CE9A4B"/>
+    </linearGradient>
+    <linearGradient id="gGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3F5B41"/>
+      <stop offset="1" stop-color="#2E4530"/>
+    </linearGradient>
+    <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8CC8C2"/>
+      <stop offset="1" stop-color="#59AAA5"/>
+    </linearGradient>
+  </defs>
+  <circle cx="0" cy="0" r="104" fill="none" stroke="url(#gGold)" stroke-width="2.5" opacity="0.9"/>
+  <circle cx="0" cy="0" r="97" fill="#FBF8F3"/>
   <g>
-    <path d="M0,0 A50,50 0 0,1 0,-100 A100,100 0 0,1 86.603,50 A50,50 0 0,0 0,0 Z" fill="#C09A6B"/>
-    <path d="M0,0 A50,50 0 0,1 86.603,50 A100,100 0 0,1 -86.603,50 A50,50 0 0,0 0,0 Z" fill="#4B6B3A"/>
-    <path d="M0,0 A50,50 0 0,1 -86.603,50 A100,100 0 0,1 0,-100 A50,50 0 0,0 0,0 Z" fill="#F7F2E7"/>
+    <path d="M0,0 A50,50 0 0,1 0,-100 A100,100 0 0,1 86.603,50 A50,50 0 0,0 0,0 Z" fill="url(#gGold)"/>
+    <path d="M0,0 A50,50 0 0,1 86.603,50 A100,100 0 0,1 -86.603,50 A50,50 0 0,0 0,0 Z" fill="url(#gGreen)"/>
+    <path d="M0,0 A50,50 0 0,1 -86.603,50 A100,100 0 0,1 0,-100 A50,50 0 0,0 0,0 Z" fill="url(#gTeal)"/>
   </g>
 </svg>
