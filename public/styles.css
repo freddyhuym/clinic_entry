@@ -1,0 +1,270 @@
+/* 醫境醫療集團 — 三原色：乳白 / 木質 / 草綠 */
+:root {
+  --cream: #F7F2E7;
+  --cream-soft: #FBF8F1;
+  --cream-deep: #EAE0CC;
+  --wood: #C09A6B;
+  --wood-deep: #9C7748;
+  --wood-dark: #6E5230;
+  --green: #4B6B3A;
+  --green-deep: #33502A;
+  --green-light: #7C9A63;
+  --ink: #2C3626;
+  --gold: #C9A961;
+
+  --serif: "Noto Serif TC", "Cormorant Garamond", "Songti TC", "PMingLiU", "SimSun", serif;
+  --shadow-soft: 0 18px 40px -18px rgba(52, 62, 40, .35);
+  --shadow-lift: 0 34px 64px -22px rgba(52, 62, 40, .48);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* 內容不足一屏時，讓頁尾靠到視窗底部（配合 .footer 的 margin-top:auto） */
+  display: flex;
+  flex-direction: column;
+  font-family: var(--serif);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 700px at 50% -10%, #FFFDF8 0%, transparent 65%),
+    linear-gradient(175deg, #FAF6ED 0%, #F3EDE0 55%, #EFE8D8 100%);
+  overflow-x: hidden;
+}
+
+/* ── 背景裝飾 ───────────────────────────── */
+.page-glow {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    linear-gradient(115deg, transparent 0 38%, rgba(201,169,97,.16) 39%, rgba(201,169,97,.04) 41%, transparent 43%),
+    linear-gradient(115deg, transparent 0 44%, rgba(201,169,97,.10) 45%, transparent 47%);
+}
+.leaf {
+  position: fixed; pointer-events: none; z-index: 0;
+  width: 420px; height: 420px; opacity: .30;
+  background: radial-gradient(closest-side, rgba(124,154,99,.55), transparent 72%);
+  filter: blur(6px);
+}
+.leaf-tl { top: -140px; left: -130px; }
+.leaf-br { bottom: -160px; right: -140px; background: radial-gradient(closest-side, rgba(192,154,107,.5), transparent 72%); }
+
+/* ── 標頭 ───────────────────────────────── */
+.hero {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: clamp(38px, 6vw, 72px) 20px 8px;
+}
+.hero-mark { width: clamp(84px, 11vw, 118px); margin: 0 auto clamp(14px, 2vw, 22px); }
+.hero-mark svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 10px 22px rgba(52,62,40,.28)); }
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(34px, 6.4vw, 68px);
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-indent: .28em;
+  color: var(--green-deep);
+  text-shadow: 0 2px 0 rgba(255,255,255,.6);
+}
+.hero-en {
+  margin: 10px 0 0;
+  font-size: clamp(12px, 1.6vw, 15px);
+  letter-spacing: .42em;
+  text-indent: .42em;
+  color: var(--wood-deep);
+  font-weight: 600;
+}
+.hero-slogan {
+  margin: 16px 0 0;
+  font-size: clamp(17px, 2.5vw, 26px);
+  letter-spacing: .22em;
+  text-indent: .22em;
+  color: var(--green);
+}
+.hero-rule {
+  margin: 18px auto 0;
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  max-width: 760px;
+  font-size: clamp(13px, 1.8vw, 17px);
+  letter-spacing: .14em;
+  color: var(--wood-dark);
+}
+.hero-rule::before, .hero-rule::after {
+  content: ""; height: 1px; flex: 1 1 40px; max-width: 110px;
+  background: linear-gradient(90deg, transparent, var(--wood));
+}
+.hero-rule::after { background: linear-gradient(270deg, transparent, var(--wood)); }
+
+/* ── 星圖 ───────────────────────────────── */
+.stage { position: relative; z-index: 1; padding: clamp(10px, 3vw, 34px) 20px 10px; }
+
+.constellation {
+  position: relative;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+/* 兩個品牌：左右並排，不需要正方形的高度。
+   min-height 是保險 —— 視窗變窄時卡片會變高，只靠比例會被壓到溢出 */
+.constellation.is-pair { aspect-ratio: 1.7 / 1; min-height: 540px; }
+.web { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.web .edge { stroke: var(--wood); stroke-width: .18; stroke-dasharray: 1.4 1.6; opacity: .5; fill: none; }
+.web .spoke { stroke: var(--green-light); stroke-width: .16; opacity: .55; }
+
+/* 中央 LOGO */
+.core {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: clamp(150px, 21vw, 216px); aspect-ratio: 1;
+  display: grid; place-items: center; text-align: center;
+}
+.core-ring {
+  position: absolute; inset: -14px; border-radius: 50%;
+  border: 1px solid rgba(192,154,107,.55);
+  box-shadow: 0 0 0 10px rgba(255,255,255,.4), 0 24px 50px -26px rgba(52,62,40,.5);
+  background: radial-gradient(closest-side, rgba(255,255,255,.85), rgba(255,255,255,.25));
+  animation: breathe 7s ease-in-out infinite;
+}
+@keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+.core-mark { position: relative; width: 62%; }
+.core-mark svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 8px 18px rgba(52,62,40,.3)); }
+.core-text { position: relative; margin-top: 8px; display: grid; gap: 3px; }
+.core-zh { font-size: clamp(17px, 2.2vw, 22px); letter-spacing: .3em; text-indent: .3em; color: var(--green-deep); font-weight: 600; }
+.core-en { font-size: 11px; letter-spacing: .28em; text-indent: .28em; color: var(--wood-deep); }
+
+/* 節點卡 */
+.nodes { position: absolute; inset: 0; }
+
+.node {
+  position: absolute;
+  width: clamp(212px, 24vw, 274px);
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  padding: 20px 18px 18px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: var(--shadow-soft);
+  transition: transform .38s cubic-bezier(.2,.8,.2,1), box-shadow .38s ease;
+  animation: rise .7s cubic-bezier(.2,.8,.2,1) backwards;
+  will-change: transform;
+}
+@keyframes rise { from { opacity: 0; transform: translate(-50%, calc(-50% + 26px)); } }
+
+.node:hover, .node:focus-visible {
+  transform: translate(-50%, calc(-50% - 8px)) scale(1.035);
+  box-shadow: var(--shadow-lift);
+  outline: none;
+}
+.node:focus-visible { box-shadow: var(--shadow-lift), 0 0 0 3px var(--gold); }
+.node.is-soon { cursor: default; opacity: .96; }
+.node.is-soon:hover { transform: translate(-50%, -50%) scale(1.012); }
+
+/* 主題配色：三原色系統 */
+.theme-green   { background: linear-gradient(158deg, #5A7C45 0%, #4B6B3A 48%, #35512A 100%); color: var(--cream); }
+.theme-cream   { background: linear-gradient(158deg, #FDFBF5 0%, #F4ECDC 55%, #EADFC8 100%); color: var(--wood-dark); border-color: rgba(192,154,107,.5); }
+.theme-woodgreen { background: linear-gradient(148deg, #C79F6E 0%, #A5814E 42%, #5C7A45 78%, #436333 100%); color: var(--cream); }
+.theme-wood    { background: linear-gradient(158deg, #CDA87C 0%, #A87F4E 55%, #86653A 100%); color: var(--cream); }
+
+.node-top { display: flex; align-items: center; gap: 11px; }
+.node-mark { width: 50px; flex: 0 0 50px; position: relative; display: grid; place-items: center; }
+.node-mark svg { width: 100%; height: auto; display: block; }
+.node-initials {
+  position: absolute; font-size: 14px; font-weight: 700; letter-spacing: .06em;
+  color: var(--cream); text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.theme-cream .node-initials { color: var(--green-deep); text-shadow: 0 1px 2px rgba(255,255,255,.8); }
+.node-emoji { margin-left: auto; font-size: 20px; line-height: 1; opacity: .95; }
+
+.node-zh { margin: 13px 0 3px; font-size: clamp(22px, 2.5vw, 27px); font-weight: 700; letter-spacing: .1em; }
+.node-en { margin: 0; font-size: 11px; letter-spacing: .18em; opacity: .8; }
+
+.node-pill {
+  display: inline-block; margin: 12px 0 0;
+  padding: 4px 14px; border-radius: 999px;
+  font-size: 13px; letter-spacing: .16em; text-indent: .16em;
+  border: 1px solid currentColor; opacity: .9;
+}
+.node-brand { margin: 12px 0 0; font-size: 12px; letter-spacing: .12em; opacity: .78; }
+
+.node-services {
+  list-style: none; margin: 13px 0 0; padding: 12px 0 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px;
+  border-top: 1px solid currentColor;
+  font-size: 13px; letter-spacing: .08em; opacity: .9;
+}
+.node-services li::before { content: "・"; opacity: .6; }
+
+.node-meta { margin: 13px 0 0; font-size: 12px; line-height: 1.65; opacity: .78; letter-spacing: .04em; }
+
+.node-cta {
+  margin: 14px 0 0; padding-top: 12px;
+  border-top: 1px solid currentColor;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 13px; letter-spacing: .14em;
+}
+.node-cta .arrow { transition: transform .3s ease; }
+.node:hover .node-cta .arrow { transform: translateX(5px); }
+.node.is-soon .node-cta { opacity: .6; }
+
+.shape-note {
+  text-align: center; margin: clamp(6px, 2vw, 22px) 0 0;
+  font-size: 14px; letter-spacing: .2em; color: var(--wood-deep); opacity: .88;
+}
+
+/* ── 核心價值 ───────────────────────────── */
+.values {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(192,154,107,.35);
+  max-width: 980px; margin: clamp(30px, 5vw, 58px) auto 0;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(192,154,107,.35);
+}
+.value {
+  background: rgba(255,255,255,.62);
+  padding: 24px 16px; text-align: center;
+  display: grid; gap: 8px; align-content: start;
+}
+.value b { font-size: 18px; letter-spacing: .14em; color: var(--green-deep); font-weight: 600; }
+.value span { font-size: 13px; line-height: 1.75; color: var(--wood-dark); opacity: .85; }
+
+/* ── 頁尾 ───────────────────────────────── */
+.footer {
+  position: relative; z-index: 1;
+  margin-top: auto;                 /* 內容短時把頁尾推到視窗底部 */
+  padding: clamp(40px, 6vw, 70px) 20px 34px;
+  text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(51,80,42,.94) 62%);
+  color: var(--cream);
+}
+.footer-line {
+  display: block; font-size: clamp(15px, 2.2vw, 21px);
+  letter-spacing: .3em; text-indent: .3em; color: var(--cream);
+}
+.footer small { display: block; margin-top: 13px; font-size: 12px; letter-spacing: .16em; opacity: .7; }
+
+/* ── 響應式：改為堆疊 ───────────────────── */
+@media (max-width: 880px) {
+  .constellation,
+  .constellation.is-pair { aspect-ratio: auto; display: block; }
+  .web { display: none; }
+  .core { position: static; transform: none; width: clamp(160px, 46vw, 210px); margin: 0 auto clamp(24px, 6vw, 38px); }
+  .nodes {
+    position: static; display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .node {
+    position: static !important; width: auto; transform: none !important;
+    animation: riseFlat .6s cubic-bezier(.2,.8,.2,1) backwards;
+  }
+  @keyframes riseFlat { from { opacity: 0; transform: translateY(22px); } }
+  .node:hover, .node:focus-visible { transform: translateY(-5px) !important; }
+  .values { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

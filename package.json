@@ -1,0 +1,15 @@
+{
+  "name": "clinic-entry",
+  "version": "1.0.0",
+  "private": true,
+  "description": "醫境醫療集團 MediRealm Medical Group — 入口網站",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

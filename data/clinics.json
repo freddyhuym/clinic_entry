@@ -1,0 +1,42 @@
+{
+  "group": {
+    "nameZh": "醫境醫療集團",
+    "nameEn": "MEDIREALM MEDICAL GROUP",
+    "slogan": "美麗・專業・安心・信賴",
+    "tagline": "專業團隊・用心服務每一位您"
+  },
+  "clinics": [
+    {
+      "id": "elite",
+      "emoji": "💎",
+      "brandEn": "MediRealm Elite",
+      "brandSub": "Carebeautyclinic",
+      "brandZh": "卓越美學",
+      "clinicZh": "曜妍診所",
+      "clinicEn": "YAO YAN CLINIC",
+      "initials": "YY",
+      "position": "頂級醫美",
+      "services": ["抗老拉提", "精緻微整", "雷射美膚", "體態雕塑"],
+      "location": "新竹市東區關新東路二七二號一樓",
+      "line": "@seebeautyclinic",
+      "url": "https://carebeautyclinic.com.tw/",
+      "theme": "green"
+    },
+    {
+      "id": "metabolic",
+      "emoji": "🌿",
+      "brandEn": "MediRealm Metabolic",
+      "brandSub": "",
+      "brandZh": "代謝健康",
+      "clinicZh": "雲纖醫境診所",
+      "clinicEn": "YUNXIAN MEDICAL CLINIC",
+      "initials": "YS",
+      "position": "代謝減重",
+      "services": ["代謝管理", "減重塑形", "健康檢測", "營養諮詢"],
+      "location": "竹北市六家五路二段二一八號一樓",
+      "line": "@yunxian_clinic",
+      "url": "https://medirealm-metabolic.com/",
+      "theme": "woodgreen"
+    }
+  ]
+}
