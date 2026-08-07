@@ -2,7 +2,7 @@
   "name": "clinic-entry",
   "version": "1.0.0",
   "private": true,
-  "description": "醫境醫療集團 MediRealm Medical Group — 入口網站",
+  "description": "醫境醫療 MediRealm Medical Group — 入口網站",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {

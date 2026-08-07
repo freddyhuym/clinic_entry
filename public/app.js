@@ -1,5 +1,5 @@
 /**
- * 醫境醫療集團 · Brand Gateway
+ * 醫境醫療 · Brand Gateway
  * 品牌連結集中於 data/clinics.json 的 brandLinks，
  * 頁面載入後同步至兩個 Panel（HTML 內已有相同預設值作為後備）。
  */

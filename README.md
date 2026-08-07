@@ -1,4 +1,4 @@
-# 醫境醫療集團 MediRealm Medical Group — 入口網站
+# 醫境醫療 MediRealm Medical Group — 入口網站
 
 零依賴 Node.js 靜態伺服器 + 原生前端（無需 build、無需 `npm install`）。
 

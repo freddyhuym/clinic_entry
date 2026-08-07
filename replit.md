@@ -1,4 +1,4 @@
-# 醫境醫療集團 YIJING MEDICAL GROUP — 品牌入口網站 (Brand Gateway)
+# 醫境醫療 YIJING MEDICAL GROUP — 品牌入口網站 (Brand Gateway)
 
 ## Overview
 純 Node.js（無外部依賴）的品牌入口網站。目的單一：讓使用者選擇進入「曜妍醫療體系」或「纖顏醫境體系」。不是完整企業官網，不放療程、醫師、衛教等內容。

@@ -1,5 +1,5 @@
 /**
- * 醫境醫療集團 MediRealm Medical Group — 入口網站
+ * 醫境醫療 MediRealm Medical Group — 入口網站
  * 零依賴靜態伺服器 + /api/clinics
  */
 const http = require('http');
@@ -79,7 +79,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log('');
-  console.log('  醫境醫療集團 MediRealm Medical Group');
+  console.log('  醫境醫療 MediRealm Medical Group');
   console.log(`  ▸ http://localhost:${PORT}`);
   console.log(`  ▸ 品牌資料：data/clinics.json（新增一筆即自動變成五角形、六角形…）`);
   console.log('');
