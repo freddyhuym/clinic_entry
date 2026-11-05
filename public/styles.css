@@ -24,6 +24,24 @@
   --xianyan-ivory: #FBF8F3;
   --xianyan-cream: #F5EEE7;
 
+  /* herage */
+  --herage-orange: #D9591F;
+  --herage-orange-deep: #B94E0A;
+  --herage-wine: #5C1A2B;
+  --herage-ivory: #FAF6EE;
+  --herage-blush: #F3E1D3;
+
+  /* nailmed (甲醫聯) */
+  --nailmed-navy: #24435F;
+  --nailmed-navy-deep: #17283A;
+  --nailmed-sky: #9BC6DE;
+
+  /* metalife (代謝生活) */
+  --metalife-ivory: #FAF7F4;
+  --metalife-lavender: #EDE1EA;
+  --metalife-plum: #6B4F6E;
+  --metalife-sage: #8A9B72;
+
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -162,11 +180,23 @@ body {
 /* ---------- SECTION 02 · Gateway ---------- */
 
 .gateway {
-  flex: 1;
+  /* flex-shrink: 0 is the real fix. A flex item's default min-height is
+     `auto`, which means "never shrink below my content's height" — but the
+     explicit `min-height: clamp(...)` below overrides that default, so once
+     total page content (intro + 6-panel grid + footer) exceeds the 100vh
+     body, flex-shrink was compressing this grid down to the clamp's value,
+     clipping panel rows, while the footer sibling still slotted in right
+     after that shrunken (too-short) box — landing mid-grid instead of below
+     it. shrink:0 makes the grid's real content height a hard floor again. */
+  flex: 1 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   min-height: clamp(420px, 58vh, 640px);
+}
+
+@media (min-width: 1700px) {
+  .gateway { grid-template-columns: repeat(6, 1fr); }
 }
 
 .panel {
@@ -321,6 +351,95 @@ body {
   background: rgba(114, 186, 180, 0.10);
 }
 
+/* --- 白袍醫境 · 溫潤 / 女性關懷 / 專科照護 --- */
+
+.panel-herage {
+  background: linear-gradient(165deg, var(--herage-ivory) 0%, var(--herage-blush) 55%, #F8EAE0 100%);
+  color: var(--herage-wine);
+}
+.panel-herage .panel-veil {
+  background:
+    radial-gradient(110% 80% at 50% 0%, rgba(217, 89, 31, 0.10), transparent 55%);
+}
+.panel-herage .panel-no { color: var(--herage-orange); }
+.panel-herage .panel-name { color: var(--herage-wine); }
+.panel-herage .panel-en { color: var(--herage-orange-deep); }
+.panel-herage .panel-rule { background: rgba(217, 89, 31, 0.45); }
+.panel-herage .panel-pos { color: rgba(92, 26, 43, 0.78); }
+.panel-herage .panel-loc { color: rgba(92, 26, 43, 0.6); }
+.panel-herage .panel-cta {
+  color: var(--herage-orange-deep);
+  border-color: rgba(217, 89, 31, 0.55);
+}
+.panel-herage:hover .panel-cta {
+  background: rgba(217, 89, 31, 0.10);
+}
+
+/* --- 甲醫聯 · 專業 / 轉介網絡 / 沉穩信任 --- */
+
+.panel-nailmed { background: var(--nailmed-navy-deep); color: #EAF1F5; }
+.panel-nailmed .panel-veil {
+  background:
+    radial-gradient(120% 90% at 80% 100%, rgba(155, 198, 222, 0.12), transparent 55%),
+    linear-gradient(160deg, var(--nailmed-navy) 0%, var(--nailmed-navy-deep) 70%);
+}
+.panel-nailmed .panel-no { color: var(--nailmed-sky); }
+.panel-nailmed .panel-en { color: var(--nailmed-sky); }
+.panel-nailmed .panel-rule { background: rgba(155, 198, 222, 0.5); }
+.panel-nailmed .panel-pos { color: rgba(234, 241, 245, 0.9); }
+.panel-nailmed .panel-cta {
+  color: var(--nailmed-sky);
+  border-color: rgba(155, 198, 222, 0.55);
+}
+.panel-nailmed:hover .panel-cta {
+  background: rgba(155, 198, 222, 0.12);
+}
+
+/* --- 代謝生活 · 科學 / 數據 / 沉靜療癒 --- */
+
+.panel-metalife {
+  background: linear-gradient(165deg, var(--metalife-ivory) 0%, var(--metalife-lavender) 60%, #F0E8EE 100%);
+  color: var(--metalife-plum);
+}
+.panel-metalife .panel-veil {
+  background:
+    radial-gradient(110% 80% at 50% 100%, rgba(138, 155, 114, 0.12), transparent 55%);
+}
+.panel-metalife .panel-no { color: var(--metalife-sage); }
+.panel-metalife .panel-name { color: var(--metalife-plum); }
+.panel-metalife .panel-en { color: var(--metalife-sage); }
+.panel-metalife .panel-rule { background: rgba(138, 155, 114, 0.5); }
+.panel-metalife .panel-pos { color: rgba(107, 79, 110, 0.8); }
+.panel-metalife .panel-cta {
+  color: var(--metalife-sage);
+  border-color: rgba(138, 155, 114, 0.55);
+}
+.panel-metalife:hover .panel-cta {
+  background: rgba(138, 155, 114, 0.12);
+}
+
+/* --- 邱文瑾醫師 · 集團代言人，沿用醫境母品牌金／象牙白識別 --- */
+
+.panel-drchiu {
+  background: linear-gradient(165deg, var(--ivory) 0%, var(--cream) 55%, #F1E7D6 100%);
+  color: var(--ink);
+}
+.panel-drchiu .panel-veil {
+  background: radial-gradient(120% 90% at 50% 0%, rgba(206, 154, 75, 0.14), transparent 60%);
+}
+.panel-drchiu .panel-no { color: var(--gold); }
+.panel-drchiu .panel-name { color: var(--ink); }
+.panel-drchiu .panel-en { color: var(--gold); }
+.panel-drchiu .panel-rule { background: rgba(206, 154, 75, 0.5); }
+.panel-drchiu .panel-pos { color: var(--ink-soft); }
+.panel-drchiu .panel-cta {
+  color: var(--gold);
+  border-color: rgba(206, 154, 75, 0.55);
+}
+.panel-drchiu:hover .panel-cta {
+  background: rgba(206, 154, 75, 0.12);
+}
+
 /* ---------- SECTION 03 · Footer ---------- */
 
 .footer {
@@ -352,6 +471,13 @@ body {
   font-size: 11px;
   letter-spacing: 0.1em;
   color: rgba(110, 106, 94, 0.6);
+}
+
+/* ---------- Tablet · 四欄轉兩欄兩列 ---------- */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .gateway { grid-template-columns: 1fr 1fr; }
+  .panel { min-height: 360px; }
 }
 
 /* ---------- Mobile ---------- */

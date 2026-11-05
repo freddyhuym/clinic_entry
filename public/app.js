@@ -10,7 +10,14 @@
     .then((r) => (r.ok ? r.json() : null))
     .then((data) => {
       if (!data || !data.brandLinks) return;
-      const map = { linkYaoyan: data.brandLinks.yaoyan, linkXianyan: data.brandLinks.xianyan };
+      const map = {
+        linkYaoyan: data.brandLinks.yaoyan,
+        linkXianyan: data.brandLinks.xianyan,
+        linkHerage: data.brandLinks.herage,
+        linkNailmed: data.brandLinks.nailmed,
+        linkMetalife: data.brandLinks.metalife,
+        linkDrchiu: data.brandLinks.drchiu,
+      };
       for (const [id, url] of Object.entries(map)) {
         const el = document.getElementById(id);
         if (el && url) el.href = url;

@@ -7,7 +7,11 @@
   },
   "brandLinks": {
     "yaoyan": "https://carebeautyclinic.com.tw/",
-    "xianyan": "https://medirealm-metabolic.com/"
+    "xianyan": "https://medirealm-origin.com/",
+    "herage": "https://herage.medirealms.org/",
+    "nailmed": "https://footconnect.medirealm-metabolic.com/",
+    "metalife": "https://metalife.com.tw/",
+    "drchiu": "https://dr-wen-chin-chiu-speaker-site.replit.app"
   },
   "brands": [
     {
@@ -21,12 +25,48 @@
     },
     {
       "id": "xianyan",
-      "nameZh": "纖顏・醫境",
+      "nameZh": "初纖顏・醫境",
       "nameEn": "XIAN YAN · MEDIREALM",
       "positioning": "都會代謝 × 體態 × 精緻美學",
       "locations": "TAIPEI · NEW TAIPEI",
-      "cta": "進入纖顏醫境體系",
-      "url": "https://medirealm-metabolic.com/"
+      "cta": "進入初纖顏醫境體系",
+      "url": "https://medirealm-origin.com/"
+    },
+    {
+      "id": "herage",
+      "nameZh": "白袍醫境",
+      "nameEn": "HERAGE · WOMEN'S HEALTH",
+      "positioning": "更年期健康 × 荷爾蒙代謝 × 全人照護",
+      "locations": "WOMEN'S HEALTH PLATFORM",
+      "cta": "進入白袍醫境女性健康",
+      "url": "https://herage.medirealms.org/"
+    },
+    {
+      "id": "nailmed",
+      "nameZh": "甲醫聯",
+      "nameEn": "NAILMED LINK",
+      "positioning": "足部健康 × 風險辨識 × 專業轉介",
+      "locations": "FOOT HEALTH NETWORK",
+      "cta": "進入甲醫聯足部健康平台",
+      "url": "https://footconnect.medirealm-metabolic.com/"
+    },
+    {
+      "id": "metalife",
+      "nameZh": "代謝生活・元健康",
+      "nameEn": "METALIFE",
+      "positioning": "代謝醫學 × 數據健康 × 科學生活",
+      "locations": "METABOLIC WELLNESS",
+      "cta": "進入代謝生活元健康",
+      "url": "https://metalife.com.tw/"
+    },
+    {
+      "id": "drchiu",
+      "nameZh": "邱文瑾醫師",
+      "nameEn": "DR. WEN-CHIN CHIU",
+      "positioning": "代謝健康 × 女性健康 × 體重管理",
+      "locations": "PROFESSIONAL SPEAKER",
+      "cta": "進入邱文瑾醫師講座網站",
+      "url": "https://dr-wen-chin-chiu-speaker-site.replit.app"
     }
   ]
 }
